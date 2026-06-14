@@ -334,8 +334,8 @@ torch.cuda.empty_cache()  # Giải phóng GPU memory
 ---
 
 ## Thành viên nhóm 
-23521396 - Hứa Mạnh Tân 
-23521376 - Nguyễn Tấn Tài 
+1. 23521396 - Hứa Mạnh Tân 
+2. 23521376 - Nguyễn Tấn Tài 
 ---
 
 # Kết quả huấn luyện 
