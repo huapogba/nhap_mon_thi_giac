@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Head & Person Detection Demo</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Head & Person Detection Demo</h1>
+            <p>Nhận diện Head và Person từ hình ảnh</p>
+        </header>
+
+        <div class="content">
+            <div class="upload-section">
+                <h2>Upload Hình Ảnh</h2>
+                <div class="upload-box" id="uploadBox">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p>Kéo và thả hình ảnh tại đây</p>
+                    <p class="or-text">hoặc</p>
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                    <button class="btn-secondary" onclick="document.getElementById('imageInput').click()">
+                        Chọn Hình Ảnh
+                    </button>
+                </div>
+                <p class="file-info">Hỗ trợ: JPG, PNG, GIF, BMP</p>
+            </div>
+
+            <div class="preview-section">
+                <h2>Hình Ảnh Gốc</h2>
+                <div class="image-container">
+                    <img id="previewImage" src="" alt="Preview" style="display: none;">
+                    <div id="noImage" class="no-image-placeholder">Chưa có hình ảnh</div>
+                </div>
+            </div>
+
+            <div class="result-section">
+                <h2>Kết Quả Nhận Diện</h2>
+                <div id="resultContainer" class="result-container" style="display: none;">
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-label">👤 Head</span>
+                            <span class="stat-value" id="headCount">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">👥 Person</span>
+                            <span class="stat-value" id="personCount">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">🔍 Tổng</span>
+                            <span class="stat-value" id="totalCount">0</span>
+                        </div>
+                    </div>
+
+                    <div class="detected-image">
+                        <h3>Hình Ảnh Sau Nhận Diện</h3>
+                        <img id="detectedImage" src="" alt="Detected">
+                    </div>
+
+                    <div class="detections-list">
+                        <h3>Chi Tiết Nhận Diện</h3>
+                        <div id="detectionsList"></div>
+                    </div>
+                </div>
+                <div id="noResult" class="no-result-placeholder">
+                    Chưa có kết quả. Upload hình ảnh để bắt đầu!
+                </div>
+            </div>
+        </div>
+
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Đang xử lý...</p>
+        </div>
+
+        <div class="error-message" id="errorMessage" style="display: none;"></div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
